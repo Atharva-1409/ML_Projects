@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
@@ -11,9 +11,8 @@ print(df.isnull().sum())
 df = df.dropna()
 
 le = LabelEncoder()
-ohe = OneHotEncoder()
 
-df["Gender"] = ohe.fit_transform(df["Gender"])
+df["Gender"] = le.fit_transform(df["Gender"])
 df["Married"] = le.fit_transform(df["Married"])
 df["Education"] = le.fit_transform(df["Education"])
 df["Loan_Status"] = le.fit_transform(df["Loan_Status"])
