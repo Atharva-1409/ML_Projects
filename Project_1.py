@@ -10,8 +10,6 @@ print(df.isnull().sum())
 
 le = LabelEncoder()
 
-df["gender"] = le.fit_transform(df["gender"])
-df["workex"] = le.fit_transform(df["workex"])
 df["status"] = le.fit_transform(df["status"])
 
 X = df[["ssc_p", "hsc_p", "degree_p", "mba_p"]]
